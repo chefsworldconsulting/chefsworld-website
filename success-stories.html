@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>قصص النجاح - Chef's World Consulting</title>
+<link rel="stylesheet" href="/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+.page-header{background:linear-gradient(135deg,var(--dark),var(--primary));color:var(--white);padding:150px 0 60px;text-align:center}
+.page-header h1{font-size:2.5rem;margin-bottom:15px}
+.page-header p{opacity:.9;font-size:1.1rem}
+.stories-section{padding:80px 0}
+.story-card{display:grid;grid-template-columns:1fr 1fr;gap:40px;background:var(--white);border-radius:15px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:40px;transition:var(--transition)}
+.story-card:hover{transform:translateY(-5px);box-shadow:0 15px 50px rgba(0,0,0,.12)}
+.story-image{min-height:300px;display:flex;align-items:center;justify-content:center;font-size:4rem}
+.story-content{padding:40px 30px;display:flex;flex-direction:column;justify-content:center}
+.story-content h3{color:var(--primary);font-size:1.5rem;margin-bottom:10px}
+.story-content .location{color:var(--secondary);font-weight:600;margin-bottom:15px}
+.story-content p{color:var(--text-light);line-height:1.9;margin-bottom:15px}
+.story-content .testimonial{background:#f8f9fa;padding:20px;border-radius:10px;border-right:4px solid var(--secondary);font-style:italic;margin-top:10px}
+.story-content .testimonial .author{font-style:normal;font-weight:700;color:var(--primary);margin-top:10px}
+@media(max-width:768px){.story-card{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="container">
+<a href="/" class="logo"><img src="https://placehold.co/60x60/1a3c6e/white?text=CWC" alt="CWC"><span>Chef's World <span class="highlight">Consulting</span></span></a>
+<div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
+<ul class="nav-menu" id="navMenu">
+<li><a href="/">الرئيسية</a></li>
+<li><a href="/services">خدماتنا</a></li>
+<li><a href="/employers">أصحاب العمل</a></li>
+<li><a href="/careers">الوظائف</a></li>
+<li><a href="/success-stories" class="active">قصص النجاح</a></li>
+<li><a href="/contact">اتصل بنا</a></li>
+<li><a href="/index-en" class="lang-switch"><i class="fas fa-globe"></i> English</a></li>
+</ul>
+</div></nav>
+<section class="page-header"><div class="container">
+<h1>قصص النجاح</h1>
+<p>مشاريع وحكايات نجاح من شركائنا حول العالم</p>
+</div></section>
+<section class="container stories-section">
+<div class="story-card">
+<div class="story-image" style="background:linear-gradient(135deg,#1a3c6e,#2a5ca8);color:var(--secondary)"><i class="fas fa-utensils"></i></div>
+<div class="story-content">
+<h3>تأسيس أكبر مصنع شاورما في الشرق الأوسط</h3>
+<div class="location"><i class="fas fa-map-marker-alt"></i> السعودية</div>
+<p>قمنا بتقديم الاستشارات التشغيلية الكاملة وتوفير الكوادر الفنية لتأسيس أكبر مصنع شاورما في المنطقة. من التصميم إلى التشغيل، كنا شركاء في كل خطوة.</p>
+<div class="testimonial">
+<p>"بفضل خبرة Chef's World Consulting، تمكنا من تأسيس المصنع بأعلى المعايير العالمية وتوفير الكوادر المدربة في وقت قياسي."</p>
+<div class="author">— محمد أمير، صاحب مشروع</div>
+</div>
+</div>
+</div>
+<div class="story-card">
+<div class="story-image" style="background:linear-gradient(135deg,#2a5ca8,#1a3c6e);color:var(--secondary)"><i class="fas fa-hotel"></i></div>
+<div class="story-content">
+<h3>توظيف كامل طاقم مطبخ فندق 5 نجوم</h3>
+<div class="location"><i class="fas fa-map-marker-alt"></i> العراق</div>
+<p>قمنا بتوفير وتوظيف الطاقم الكامل لمطبخ فندق 5 نجوم في بغداد، بدءاً من الشيف التنفيذي وصولاً إلى طاقم الدعم. جميع المرشحين خضعوا لاختبارات عملية مكثفة.</p>
+<div class="testimonial">
+<p>"أكثر من 30 موظفاً تم توظيفهم خلال 3 أسابيع فقط. الجودة كانت مذهلة!"</p>
+<div class="author">— مدير الفندق، بغداد</div>
+</div>
+</div>
+</div>
+<div class="story-card">
+<div class="story-image" style="background:linear-gradient(135deg,#c9a84c,#e8c96a);color:var(--dark)"><i class="fas fa-globe-africa"></i></div>
+<div class="story-content">
+<h3>دعم قطاع الضيافة في أفريقيا</h3>
+<div class="location"><i class="fas fa-map-marker-alt"></i> تانزانيا | الكونغو</div>
+<p>نفذنا مشاريع توظيف واستشارات في تانزانيا والكونغو، وساعدنا في تطوير المطاعم والفنادق هناك بأعلى المعايير الدولية.</p>
+<div class="testimonial">
+<p>"خبرتهم الدولية وتفهّمهم للسوق المحلي كانا مفتاح نجاح مشروعنا."</p>
+<div class="author">— شريك محلي، تانزانيا</div>
+</div>
+</div>
+</div>
+</section>
+<a href="https://wa.me/961XXXXXXXXX" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<footer class="footer"><div class="container">
+<div class="footer-content">
+<div class="footer-section"><h4>Chef's World Consulting</h4><p><i class="fas fa-map-marker-alt"></i> لبنان | <i class="fas fa-gavel"></i> كيان قانوني في المملكة المتحدة</p></div>
+<div class="footer-section"><h4>روابط سريعة</h4><ul><li><a href="/">الرئيسية</a></li><li><a href="/services">خدماتنا</a></li><li><a href="/employers">أصحاب العمل</a></li><li><a href="/careers">الوظائف</a></li></ul></div>
+<div class="footer-section"><h4>تواصل معنا</h4><p><i class="fas fa-phone"></i> +961 XX XXX XXX</p><p><i class="fas fa-envelope"></i> info@chefsworldconsulting.com</p></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 Chef's World Consulting. جميع الحقوق محفوظة.</p></div>
+</div></footer>
+<script src="/js/script.js"></script>
+</body>
+</html>
