@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChefsWorld Consulting - من نحن</title>
+    <style>
+        /* تطابق كامل مع ألوان اللوغو الفعلي: الأسود الحاد والأصفر اللامع */
+        :root {
+            --primary-black: #000000;
+            --secondary-black: #111111;
+            --brand-yellow: #fff200; /* درجة الأصفر الفوسفوري اللامع من اللوغو */
+            --white: #ffffff;
+            --light-bg: #f8f9fa;
+            --card-body: #1a1a1a;
+            --danger-red: #d41414;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* الهيدر وقائمة التنقل الكاملة والموحدة عبر جميع الصفحات */
+        header { background-color: var(--primary-black); padding: 15px 0; border-bottom: 4px solid var(--brand-yellow); position: sticky; top: 0; z-index: 1000; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-text { color: var(--white); font-size: 1.5rem; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; }
+        .logo-text span { color: var(--brand-yellow); }
+        
+        nav a { color: var(--white); text-decoration: none; margin-right: 20px; font-weight: bold; transition: 0.3s; font-size: 0.95rem; }
+        nav a:hover { color: var(--brand-yellow); }
+        nav a.active { color: var(--brand-yellow); border-bottom: 2px solid var(--brand-yellow); padding-bottom: 5px; }
+
+        /* عنوان الصفحة الرئيسي */
+        .page-header { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('https://unsplash.com') no-repeat center center/cover; padding: 100px 0; text-align: center; color: var(--white); border-bottom: 5px solid var(--brand-yellow); }
+        .page-header h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 15px; }
+        .page-header h1 span { color: var(--brand-yellow); }
+        .page-header p { font-size: 1.25rem; max-width: 800px; margin: 0 auto; color: #ccc; }
+
+        /* قصة الفلسفة ومعالجة أوجاع المستثمر */
+        .about-section { padding: 80px 0; background-color: var(--white); }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--primary-black); margin-bottom: 15px; font-weight: 800; }
+        .section-title h2 span { color: var(--brand-yellow); background: var(--primary-black); padding: 2px 10px; border-radius: 4px; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: var(--brand-yellow); margin: 15px auto 0; }
+
+        .about-grid { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; margin-bottom: 60px; }
+        .about-text { flex: 1.2; min-width: 300px; }
+        .about-text h3 { font-size: 1.8rem; color: var(--danger-red); margin-bottom: 20px; font-weight: 800; border-right: 4px solid var(--danger-red); padding-right: 15px; line-height: 1.4; }
+        .about-text p { font-size: 1.1rem; color: #444; margin-bottom: 20px; text-align: justify; }
+        .about-img { flex: 1; min-width: 300px; border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 2px solid var(--brand-yellow); }
+        .about-img img { width: 100%; display: block; }
+
+        /* قسم قيمنا وركائزنا الأساسية */
+        .values-section { background-color: var(--secondary-black); padding: 80px 0; color: var(--white); border-top: 2px solid var(--brand-yellow); }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .value-card { background: var(--card-body); padding: 40px 30px; border-radius: 4px; border-top: 4px solid var(--brand-yellow); transition: 0.3s; }
+        .value-card:hover { transform: translateY(-5px); }
+        .value-card .icon { font-size: 2.5rem; margin-bottom: 20px; display: inline-block; }
+        .value-card h4 { font-size: 1.4rem; color: var(--brand-yellow); margin-bottom: 15px; font-weight: 700; }
+        .value-card p { color: #ccc; font-size: 1rem; text-align: justify; }
+
+        /* تذييل الصفحة الموحد */
+        footer { background-color: var(--primary-black); color: var(--white); padding: 40px 0 20px; border-top: 4px solid var(--brand-yellow); }
+        .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 30px; }
+        .footer-about h4 { color: var(--brand-yellow); margin-bottom: 15px; font-weight: 700; }
+        .footer-contact h4 { color: var(--brand-yellow); margin-bottom: 15px; font-weight: 700; }
+        .footer-contact p { margin-bottom: 8px; color: #ccc; }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #222; color: #666; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-wrapper { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 5px; font-size: 0.85rem; }
+            .page-header h1 { font-size: 1.8rem; }
+            .section-title h2 { font-size: 1.6rem; }
+            .about-grid { flex-direction: column; }
+            .footer-grid { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر وقائمة التنقل الكاملة والموحدة -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo-text">CHEFSWORLD <span>CONSULTING</span></div>
+            <nav>
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html" class="active">من نحن</a>
+                <a href="services.html">خدماتنا</a>
+                <a href="success.html">قصة النجاح</a>
+                <a href="contact.html">الاتصال بنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- عنوان الصفحة -->
+    <section class="page-header">
+        <div class="container">
+            <h1>من نحن: <span>الهوية والالتزام</span></h1>
+            <p>تعرّف على الفلسفة والقيم النزيهة التي تقود العمليات الاستشارية والتوظيفية لشركة ChefsWorld Consulting عالمياً.</p>
+        </div>
+    </section>
+
+    <!-- قصة ضرب جرح صاحب المصلحة مباشرة واللمسة العائلية -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>رؤيتنا <span>وفلسفتنا الجوهرية</span></h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>نحن لا نملأ خانات وظيفية.. نحن نحمي استثمارك من نزيف الخيانة الفنية والهروب المفاجئ!</h3>
+                    <p>نعلم تماماً كابوس صاحب المصلحة والمستثمر الفندقي: موظف محترف على الورق والسير الذاتية المزيفة، وبمجرد وصوله إلى بلد العمل وتكفلك بكامل مصاريف إقامته وفيزا سفره، تكتشف كذب مهاراته، أو الأسوأ.. يهرب فجأة ليترك منشأتك ومطبخك في ورطة تشغيلية قاتلة وخسائر مالية جسيمة.</p>
+                    <p>في <strong>ChefsWorld Consulting</strong>، فلسفتنا تقضي على هذه المخاطرة تماماً. الشيف مهدي فحص لا يراجع سطوراً مكتوبة، بل يخضع المرشحين **لامتحان ميداني حقيقي مصوّر ومضغوط**، وندقق في تاريخهم المهني واللوجستي والأخلاقي قبل الفني. نحن نضمن لك استقراراً بشرياً كاملاً، ونحمي منشأتك من السرقات المستترة وهدر الأطباق، لتنام مرتاح البال وأنت تعلم أن مطبخك يُدار بأيدي أمينة وعقول تم اختبارها ميدانياً بدقة.</p>
+                    <p>وما يضمن هذه المصداقية الصارمة هو ثقافتنا؛ فالشركة تُدار بالكامل بلمسة شخصية وعائلية مشتركة (مع الوالد والأخ)، مما يعطيك كعميل كبير اهتماماً فائقاً وخاصاً جداً بطلبك لحماية استثمارك، بعيداً عن البرود السائد في شركات التوظيف التقليدية.</p>
+                </div>
+                <div class="about-img">
+                    <img src="https://unsplash.com" alt="ChefsWorld Management">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم ركائز وقيم العمل النزيهة والمحدثة بناء على أوجاع صاحب المصلحة -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: var(--white);">الركائز التي <span>تبني نجاحك</span></h2>
+            </div>
+            
+            <div class="values-grid">
+                
+                <!-- القيمة 1 -->
+                <div class="value-card">
+                    <div class="icon">🤝</div>
+                    <h4>الصدق والشفافية المطلقة</h4>
+                    <p>الأمانة الفنية هي أساس ثقتنا. نحن لا نُجَمّل التقارير بل نضع المستثمر أمام الحقيقة الدقيقة حول نقاط القوة ونقاط الضعف لدى الكوادر المرشحة (كالمهارة الفنية العالية مقابل ضعف اللغة)، مما يتيح لصاحب العمل بناء قراراته التشغيلية الاستراتيجية على بينة ووضوح مطلقين دون التعرض لخداع الورقيات.</p>
+                </div>
+
+                <!-- القيمة 2 -->
+                <div class="value-card">
+                    <div class="icon">🧩</div>
+                    <h4>المرونة والاستقرار البشري</h4>
+                    <p>نؤمن بالمرونة اللوجستية والإنسانية التي تدعم الكفاءات الفندقية الأكفاء وتؤمن استقرارهم المهني والمالي والنفسي، وهو ما ينعكس بشكل مباشر وفوري في <strong>تقليل نسب دوران العمالة وتغيير الموظفين المستمر في فندقك أو مطعمك</strong>، وحفظ أرباح منشأتك من تكاليف التأشيرات والبدلاء المتكررة.</p>
+                </div>
+
+                <!-- القيمة 3 -->
+                <div class="value-card">
+                    <div class="icon">👁️</div>
+                    <h4>عين الشيف الشغيل الخبير</h4>
+                    <p>بفضل خبرتنا الميدانية الدولية التي تمتد لـ 25 عاماً في قلب المطابخ العالمية وتأسيس المصانع والمنشآت الضخمة، لا يمكن لأي مرشح أن يمثل أو يدّعي الخبرة أمامنا. نحن نملك القدرة الكاملة لكشف وفرز الكفاءة الحقيقية من المزيفة في غضون دقائق معدودة داخل المطبخ وحمايتك من خيانة الأداء.</p>
+                </div>
+
+            </div>
+        </div>
