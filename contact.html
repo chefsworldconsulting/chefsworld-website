@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChefsWorld Consulting - الاتصال بنا</title>
+    <style>
+        /* تطابق كامل مع ألوان اللوغو الفعلي: الأسود الحاد والأصفر اللامع */
+        :root {
+            --primary-black: #000000;
+            --secondary-black: #111111;
+            --brand-yellow: #fff200; 
+            --white: #ffffff;
+            --light-bg: #f8f9fa;
+            --card-body: #1a1a1a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* الهيدر وقائمة التنقل الكاملة والموحدة عبر جميع الصفحات */
+        header { background-color: var(--primary-black); padding: 15px 0; border-bottom: 4px solid var(--brand-yellow); position: sticky; top: 0; z-index: 1000; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-text { color: var(--white); font-size: 1.5rem; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; }
+        .logo-text span { color: var(--brand-yellow); }
+        
+        nav a { color: var(--white); text-decoration: none; margin-right: 20px; font-weight: bold; transition: 0.3s; font-size: 0.95rem; }
+        nav a:hover { color: var(--brand-yellow); }
+        nav a.active { color: var(--brand-yellow); border-bottom: 2px solid var(--brand-yellow); padding-bottom: 5px; }
+
+        /* عنوان الصفحة الرئيسي */
+        .page-header { background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('https://unsplash.com') no-repeat center center/cover; padding: 80px 0; text-align: center; color: var(--white); border-bottom: 5px solid var(--brand-yellow); }
+        .page-header h1 { font-size: 2.6rem; font-weight: 800; margin-bottom: 15px; }
+        .page-header h1 span { color: var(--brand-yellow); }
+        .page-header p { font-size: 1.25rem; max-width: 800px; margin: 0 auto; color: #ccc; }
+
+        /* محتوى صفحة الاتصال */
+        .contact-section { padding: 80px 0; background-color: var(--white); }
+        .contact-grid { display: flex; gap: 50px; flex-wrap: wrap; }
+        
+        /* قنوات الاتصال الفاخرة والمقرات */
+        .contact-info { flex: 1; min-width: 300px; background: var(--secondary-black); color: var(--white); padding: 40px; border-radius: 6px; border-right: 5px solid var(--brand-yellow); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .contact-info h3 { font-size: 1.8rem; color: var(--brand-yellow); margin-bottom: 25px; font-weight: 800; }
+        
+        .info-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; }
+        .info-item .icon { font-size: 1.5rem; background: var(--card-body); padding: 10px; border-radius: 4px; border: 1px solid #333; line-height: 1; }
+        .info-item h4 { font-size: 1.1rem; color: var(--brand-yellow); margin-bottom: 5px; font-weight: 700; }
+        .info-item p { color: #ccc; font-size: 1rem; }
+        
+        /* أزرار الواتساب الثنائية المحدثة للرقمين */
+        .whatsapp-group { display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
+        .whatsapp-direct-btn { display: block; text-align: center; background: var(--brand-yellow); color: var(--primary-black); padding: 14px; border-radius: 4px; font-weight: 800; text-decoration: none; font-size: 1.05rem; transition: 0.3s; }
+        .whatsapp-direct-btn:hover { background: var(--white); transform: translateY(-3px); }
+
+        /* نموذج المراسلة */
+        .contact-form-box { flex: 1.2; min-width: 300px; }
+        .contact-form-box h3 { font-size: 1.8rem; color: var(--primary-black); margin-bottom: 25px; font-weight: 800; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #444; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; background: var(--light-bg); font-size: 1rem; color: #333; outline: none; transition: 0.3s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary-black); background: var(--white); box-shadow: 0 0 8px rgba(0,0,0,0.05); }
+        
+        .submit-btn { background: var(--primary-black); color: var(--white); border: 2px solid var(--primary-black); padding: 14px 40px; font-weight: bold; font-size: 1.1rem; border-radius: 4px; cursor: pointer; transition: 0.3s; width: 100%; }
+        .submit-btn:hover { background: var(--brand-yellow); color: var(--primary-black); border-color: var(--brand-yellow); }
+
+        /* تذييل الصفحة الموحد */
+        footer { background-color: var(--primary-black); color: var(--white); padding: 40px 0 20px; border-top: 4px solid var(--brand-yellow); }
+        .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 30px; }
+        .footer-about h4 { color: var(--brand-yellow); margin-bottom: 15px; font-weight: 700; }
+        .footer-contact h4 { color: var(--brand-yellow); margin-bottom: 15px; font-weight: 700; }
+        .footer-contact p { margin-bottom: 8px; color: #ccc; }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #222; color: #666; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .nav-wrapper { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 5px; font-size: 0.85rem; }
+            .page-header h1 { font-size: 1.8rem; }
+            .contact-grid { flex-direction: column; }
+            .footer-grid { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر وقائمة التنقل الكاملة والموحدة -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo-text">CHEFSWORLD <span>CONSULTING</span></div>
+            <nav>
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="services.html">خدماتنا</a>
+                <a href="success.html">قصة النجاح</a>
+                <a href="contact.html" class="active">الاتصال بنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- عنوان الصفحة -->
+    <section class="page-header">
+        <div class="container">
+            <h1>الاتصال <span>بنا المباشر</span></h1>
+            <p>تواصل مع القيادة التنفيذية لشركة ChefsWorld Consulting لحماية وتأسيس منشأتك الفندقية بنجاح.</p>
+        </div>
+    </section>
+
+    <!-- محتوى وقنوات الاتصال الثنائية -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- صندوق القنوات والمقرات الدولية والرقمين المعتمدين -->
+                <div class="contact-info">
+                    <h3>المقرات وقنوات الاتصال</h3>
+                    
+                    <div class="info-item">
+                        <div class="icon">📧</div>
+                        <div>
+                            <h4>البريد الإلكتروني الرسمي</h4>
+                            <p>ChefsWorldConsulting@chefsworldconsulting.com</p>
+                        </div>
+                    </div>
+
+                    <!-- عرض الرقم الأول -->
+                    <div class="info-item">
+                        <div class="icon">📱</div>
+                        <div>
+                            <h4>رقم الجوال والواتساب (خط أساسي)</h4>
+                            <p>+961 76 938 123</p>
+                        </div>
+                    </div>
+
+                    <!-- عرض الرقم الثاني -->
+                    <div class="info-item">
+                        <div class="icon">📱</div>
+                        <div>
+                            <h4>رقم الجوال والواتساب (خط إضافي)</h4>
+                            <p>+961 3 028 703</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon">🌍</div>
+                        <div>
+                            <h4>المقر الإقليمي</h4>
+                            <p>لبنان - بيروت</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon">🇬🇧</div>
+                        <div>
+                            <h4>الفرع الدولي (تحت التأسيس)</h4>
+                            <p>المملكة المتحدة - لندن (UK)</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon">✈️</div>
+                        <div>
+                            <h4>مناطق التغطية والتشغيل</h4>
+                            <p>دول الخليج العربي، العراق، أفريقيا، والهند</p>
+                        </div>
+                    </div>
+
+                    <!-- ربط ثنائي مباشر بالرقمين لفتح محادثات واتساب مجهزة ومفرزة باسم الشركة -->
+                    <div class="whatsapp-group">
+                        <a href="https://wa.me." class="whatsapp-direct-btn" target="_blank">💬 الخط الأساسي: تواصل عبر الواتساب</a>
